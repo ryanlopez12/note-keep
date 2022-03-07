@@ -8,7 +8,7 @@ const app = express();
 const allNotes = require('./db/db.json');
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname+ './public'));
+app.use(express.static(__dirname+ '/public'));
 app.use(express.json());
 
 
@@ -17,11 +17,11 @@ app.get('/api/notes', (req, res) => {
 });
 
 app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/notes.html'));
+    res.sendFile(path.join(__dirname, 'public/notes.html'));
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/index.html'));
+    res.sendFile(path.join(__dirname, 'public/notes.html'));
 });
 
 
